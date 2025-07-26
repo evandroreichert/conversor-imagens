@@ -12,6 +12,7 @@ import { Slider } from "@/components/ui/slider"
 import { Upload, Download, ImageIcon, Loader2, Zap, Sparkles } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import Image from "next/image"
 
 export default function ImageConverter() {
   const [inputFile, setInputFile] = useState<File | null>(null)
@@ -30,7 +31,7 @@ export default function ImageConverter() {
     if (file) {
       if (!file.type.startsWith("image/")) {
         toast({
-          title: "⚡ Arquivo inválido",
+          title: "Arquivo inválido",
           description: "Por favor, selecione um arquivo de imagem.",
           variant: "destructive",
         })
@@ -111,13 +112,13 @@ export default function ImageConverter() {
       setOutputSize(blob.size)
 
       toast({
-        title: "Conversão concluída ⚡",
+        title: "Conversão concluída!",
         description: `Imagem convertida para ${outputFormat.toUpperCase()} com sucesso.`,
       })
     } catch (error) {
       console.error("Erro na conversão:", error)
       toast({
-        title: "Erro na conversão ⚡",
+        title: "Erro na conversão",
         description: "Falha ao converter a imagem. Verifique o formato e tente novamente.",
         variant: "destructive",
       })
@@ -138,7 +139,7 @@ export default function ImageConverter() {
     document.body.removeChild(link)
 
     toast({
-      title: "⚡ Download iniciado",
+      title: "Download iniciado",
       description: "Sua imagem convertida está sendo baixada.",
     })
   }
@@ -158,55 +159,45 @@ export default function ImageConverter() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
-      {/* Background Lightning Effects */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-10 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
-        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-500"></div>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute -bottom-8 left-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-500"></div>
       </div>
 
-      {/* Lightning Bolt Decorations */}
-      <div className="absolute top-10 right-20 text-6xl opacity-10 animate-bounce">⚡</div>
-      <div className="absolute bottom-20 left-10 text-4xl opacity-10 animate-pulse">⚡</div>
-      <div className="absolute top-1/2 left-5 text-3xl opacity-10 animate-bounce delay-300">⚡</div>
-
       <div className="relative z-10 max-w-4xl mx-auto p-4 space-y-6">
-        <div className="text-center space-y-4 py-8">
+        {/* Header with Seanet Logo */}
+        <div className="text-center space-y-6 py-8">
+          <div className="flex justify-center mb-6">
+            <Image src="/seanet-logo-dark.png" alt="Seanet" width={200} height={60} className="h-12 w-auto" />
+          </div>
+
           <div className="flex items-center justify-center gap-3 mb-4">
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent">
               Conversor de Imagens
             </h1>
             <div className="text-6xl animate-pulse delay-300">⚡</div>
           </div>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Converta suas imagens com a velocidade de um raio! PNG, JPEG e WebP em segundos.
-          </p>
-          <div className="flex items-center justify-center gap-2 text-cyan-400">
+
+          <div className="flex items-center justify-center gap-2 text-blue-400">
             <Sparkles className="h-5 w-5 animate-pulse" />
-            <span className="text-sm font-medium">Powered by Canvas API</span>
+            <span className="text-sm font-medium">Powered for Seanet Telecom</span>
             <Sparkles className="h-5 w-5 animate-pulse delay-150" />
           </div>
         </div>
 
-        <Alert className="bg-slate-800/50 border-cyan-500/30 backdrop-blur-sm">
-          <Zap className="h-4 w-4 text-cyan-400" />
-          <AlertDescription className="text-slate-300">
-            <span className="text-cyan-400 font-semibold">Ultra-rápido:</span> Conversão instantânea usando tecnologia
-            Canvas API. Suporte completo para controle de qualidade em JPEG e WebP.
-          </AlertDescription>
-        </Alert>
-
-        <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm shadow-2xl shadow-purple-500/10">
+        <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm shadow-2xl shadow-blue-500/10">
           <CardHeader className="border-b border-slate-700/50">
             <CardTitle className="flex items-center gap-2 text-slate-100">
-              <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
+              <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
                 <Upload className="h-5 w-5 text-white" />
               </div>
               Upload da Imagem
             </CardTitle>
             <CardDescription className="text-slate-400">
-              Selecione uma imagem para conversão instantânea ⚡
+              Selecione uma imagem para conversão instantânea
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 pt-6">
@@ -219,7 +210,7 @@ export default function ImageConverter() {
                 type="file"
                 accept="image/*"
                 onChange={handleFileChange}
-                className="cursor-pointer bg-slate-700/50 border-slate-600 text-slate-200 file:bg-gradient-to-r file:from-blue-500 file:to-purple-500 file:text-white file:border-0 file:rounded-md hover:bg-slate-700/70 transition-all"
+                className="cursor-pointer bg-slate-700/50 border-slate-600 text-slate-200 file:bg-gradient-to-r file:from-blue-500 file:to-cyan-500 file:text-white file:border-0 file:rounded-md hover:bg-slate-700/70 transition-all"
               />
             </div>
 
@@ -247,7 +238,7 @@ export default function ImageConverter() {
                     </SelectItem>
                     <SelectItem value="webp" className="text-slate-200 focus:bg-slate-700">
                       <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                         WebP (moderno)
                       </div>
                     </SelectItem>
@@ -258,7 +249,7 @@ export default function ImageConverter() {
               {(outputFormat === "jpeg" || outputFormat === "webp") && (
                 <div className="space-y-3">
                   <Label className="text-slate-200 font-medium flex items-center gap-2">
-                    <Zap className="h-4 w-4 text-cyan-400" />
+                    <Zap className="h-4 w-4 text-blue-400" />
                     Qualidade: {quality[0]}%
                   </Label>
                   <Slider value={quality} onValueChange={setQuality} max={100} min={1} step={1} className="w-full" />
@@ -273,17 +264,17 @@ export default function ImageConverter() {
             <Button
               onClick={convertImage}
               disabled={!inputFile || converting}
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-3 rounded-lg shadow-lg shadow-purple-500/25 transition-all duration-300 hover:shadow-purple-500/40 hover:scale-[1.02]"
+              className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 rounded-lg shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02]"
             >
               {converting ? (
                 <>
                   <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Convertendo com velocidade de raio...
+                  Convertendo...
                 </>
               ) : (
                 <>
-                  <Zap className="mr-2 h-5 w-5" />
-                  Converter Imagem ⚡
+                  <ImageIcon className="mr-2 h-5 w-5" />
+                  Converter Imagem
                 </>
               )}
             </Button>
@@ -291,7 +282,7 @@ export default function ImageConverter() {
         </Card>
 
         {(inputPreview || outputUrl) && (
-          <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm shadow-2xl shadow-cyan-500/10">
+          <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm shadow-2xl shadow-blue-500/10">
             <CardHeader className="border-b border-slate-700/50">
               <CardTitle className="text-slate-100 flex items-center gap-2">
                 <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg">
@@ -299,7 +290,7 @@ export default function ImageConverter() {
                 </div>
                 Preview das Imagens
               </CardTitle>
-              <CardDescription className="text-slate-400">Compare o antes e depois da conversão ⚡</CardDescription>
+              <CardDescription className="text-slate-400">Compare o antes e depois da conversão</CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="grid md:grid-cols-2 gap-8">
@@ -319,7 +310,7 @@ export default function ImageConverter() {
                     {inputFile && (
                       <div className="text-sm text-slate-400 text-center space-y-1 bg-slate-700/30 rounded-lg p-3">
                         <p className="font-medium text-slate-300">{inputFile.name}</p>
-                        <p className="text-cyan-400">{formatFileSize(inputFile.size)}</p>
+                        <p className="text-blue-400">{formatFileSize(inputFile.size)}</p>
                       </div>
                     )}
                   </div>
@@ -328,7 +319,7 @@ export default function ImageConverter() {
                 {outputUrl && (
                   <div className="space-y-4">
                     <h3 className="font-semibold text-center text-slate-200 flex items-center justify-center gap-2">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
                       Convertida ({outputFormat.toUpperCase()})
                     </h3>
                     <div className="border border-slate-600 rounded-xl overflow-hidden bg-slate-900/50 shadow-lg">
@@ -340,7 +331,7 @@ export default function ImageConverter() {
                     </div>
                     {outputSize && (
                       <div className="text-sm text-slate-400 text-center space-y-2 bg-slate-700/30 rounded-lg p-3">
-                        <p className="text-purple-400 font-medium">{formatFileSize(outputSize)}</p>
+                        <p className="text-cyan-400 font-medium">{formatFileSize(outputSize)}</p>
                         {getCompressionRatio() && (
                           <p className="text-green-400 font-semibold flex items-center justify-center gap-1">
                             <Zap className="h-3 w-3" />
@@ -354,7 +345,7 @@ export default function ImageConverter() {
                       className="w-full bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-600 hover:to-cyan-600 text-white font-semibold py-3 rounded-lg shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02]"
                     >
                       <Download className="mr-2 h-4 w-4" />
-                      Baixar Imagem ⚡
+                      Baixar Imagem
                     </Button>
                   </div>
                 )}
