@@ -166,42 +166,42 @@ export default function ImageConverter() {
         <div className="absolute -bottom-8 left-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-500"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto p-4 space-y-6">
+      <div className="relative z-10 w-full max-w-4xl mx-auto p-3 sm:p-4 space-y-4 sm:space-y-6">
         {/* Header with Seanet Logo */}
-        <div className="text-center space-y-4 py-6">
-          <div className="flex justify-center mb-6">
-            <Image src="/seanet-logo-dark.png" alt="Seanet" width={200} height={60} className="h-12 w-auto" />
+        <div className="text-center space-y-3 sm:space-y-4 py-4 sm:py-6">
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <Image src="/seanet-logo-dark.png" alt="Seanet" width={200} height={60} className="h-8 sm:h-12 w-auto" />
           </div>
 
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent leading-tight">
               Conversor de Imagens
             </h1>
-            <div className="text-6xl animate-pulse delay-300">⚡</div>
+            <div className="text-4xl sm:text-5xl lg:text-6xl animate-pulse delay-300">⚡</div>
           </div>
 
           <div className="flex items-center justify-center gap-2 text-blue-400">
-            <Sparkles className="h-5 w-5 animate-pulse" />
-            <span className="text-sm font-medium">Powered for Seanet Telecom</span>
-            <Sparkles className="h-5 w-5 animate-pulse delay-150" />
+            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
+            <span className="text-xs sm:text-sm font-medium">Powered for Seanet Telecom</span>
+            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse delay-150" />
           </div>
         </div>
 
         <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm shadow-2xl shadow-blue-500/10">
-          <CardHeader className="border-b border-slate-700/50">
-            <CardTitle className="flex items-center gap-2 text-slate-100">
-              <div className="p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
-                <Upload className="h-5 w-5 text-white" />
+          <CardHeader className="border-b border-slate-700/50 p-4 sm:p-6">
+            <CardTitle className="flex items-center gap-2 text-slate-100 text-lg sm:text-xl">
+              <div className="p-1.5 sm:p-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+                <Upload className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
               </div>
               Upload da Imagem
             </CardTitle>
-            <CardDescription className="text-slate-400">
+            <CardDescription className="text-slate-400 text-sm">
               Selecione uma imagem para conversão instantânea
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6 pt-6">
+          <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
             <div className="space-y-2">
-              <Label htmlFor="file-input" className="text-slate-200 font-medium">
+              <Label htmlFor="file-input" className="text-slate-200 font-medium text-sm">
                 Arquivo de Imagem
               </Label>
               <Input
@@ -209,13 +209,13 @@ export default function ImageConverter() {
                 type="file"
                 accept="image/*"
                 onChange={handleFileChange}
-                className="cursor-pointer bg-slate-700/50 border-slate-600 text-slate-200 file:bg-gradient-to-r file:from-blue-500 file:to-cyan-500 file:text-white file:border-0 file:rounded-md hover:bg-slate-700/70 transition-all"
+                className="cursor-pointer bg-slate-700/50 border-slate-600 text-slate-200 file:bg-gradient-to-r file:from-blue-500 file:to-cyan-500 file:text-white file:border-0 file:rounded-md hover:bg-slate-700/70 transition-all text-sm"
               />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-2">
-                <Label htmlFor="format-select" className="text-slate-200 font-medium">
+                <Label htmlFor="format-select" className="text-slate-200 font-medium text-sm">
                   Formato de Saída
                 </Label>
                 <Select value={outputFormat} onValueChange={setOutputFormat}>
@@ -247,7 +247,7 @@ export default function ImageConverter() {
 
               {(outputFormat === "jpeg" || outputFormat === "webp") && (
                 <div className="space-y-3">
-                  <Label className="text-slate-200 font-medium flex items-center gap-2">
+                  <Label className="text-slate-200 font-medium flex items-center gap-2 text-sm">
                     <Zap className="h-4 w-4 text-blue-400" />
                     Qualidade: {quality[0]}%
                   </Label>
@@ -263,16 +263,16 @@ export default function ImageConverter() {
             <Button
               onClick={convertImage}
               disabled={!inputFile || converting}
-              className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 rounded-lg shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02]"
+              className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02] text-sm sm:text-base"
             >
               {converting ? (
                 <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                  <Loader2 className="mr-2 h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
                   Convertendo...
                 </>
               ) : (
                 <>
-                  <ImageIcon className="mr-2 h-5 w-5" />
+                  <ImageIcon className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Converter Imagem
                 </>
               )}
@@ -282,20 +282,22 @@ export default function ImageConverter() {
 
         {(inputPreview || outputUrl) && (
           <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm shadow-2xl shadow-blue-500/10">
-            <CardHeader className="border-b border-slate-700/50">
-              <CardTitle className="text-slate-100 flex items-center gap-2">
-                <div className="p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg">
-                  <ImageIcon className="h-5 w-5 text-white" />
+            <CardHeader className="border-b border-slate-700/50 p-4 sm:p-6">
+              <CardTitle className="text-slate-100 flex items-center gap-2 text-lg sm:text-xl">
+                <div className="p-1.5 sm:p-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg">
+                  <ImageIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                 </div>
                 Preview das Imagens
               </CardTitle>
-              <CardDescription className="text-slate-400">Compare o antes e depois da conversão</CardDescription>
+              <CardDescription className="text-slate-400 text-sm">
+                Compare o antes e depois da conversão
+              </CardDescription>
             </CardHeader>
-            <CardContent className="pt-6">
-              <div className="grid md:grid-cols-2 gap-8">
+            <CardContent className="p-4 sm:p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 {inputPreview && (
                   <div className="space-y-4">
-                    <h3 className="font-semibold text-center text-slate-200 flex items-center justify-center gap-2">
+                    <h3 className="font-semibold text-center text-slate-200 flex items-center justify-center gap-2 text-sm sm:text-base">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                       Original
                     </h3>
@@ -303,13 +305,13 @@ export default function ImageConverter() {
                       <img
                         src={inputPreview || "/placeholder.svg"}
                         alt="Imagem original"
-                        className="w-full h-64 object-contain"
+                        className="w-full h-48 sm:h-64 object-contain"
                       />
                     </div>
                     {inputFile && (
                       <div className="text-sm text-slate-400 text-center space-y-1 bg-slate-700/30 rounded-lg p-3">
-                        <p className="font-medium text-slate-300">{inputFile.name}</p>
-                        <p className="text-blue-400">{formatFileSize(inputFile.size)}</p>
+                        <p className="font-medium text-slate-300 text-xs sm:text-sm truncate">{inputFile.name}</p>
+                        <p className="text-blue-400 text-xs sm:text-sm">{formatFileSize(inputFile.size)}</p>
                       </div>
                     )}
                   </div>
@@ -317,7 +319,7 @@ export default function ImageConverter() {
 
                 {outputUrl && (
                   <div className="space-y-4">
-                    <h3 className="font-semibold text-center text-slate-200 flex items-center justify-center gap-2">
+                    <h3 className="font-semibold text-center text-slate-200 flex items-center justify-center gap-2 text-sm sm:text-base">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
                       Convertida ({outputFormat.toUpperCase()})
                     </h3>
@@ -325,14 +327,14 @@ export default function ImageConverter() {
                       <img
                         src={outputUrl || "/placeholder.svg"}
                         alt="Imagem convertida"
-                        className="w-full h-64 object-contain"
+                        className="w-full h-48 sm:h-64 object-contain"
                       />
                     </div>
                     {outputSize && (
                       <div className="text-sm text-slate-400 text-center space-y-2 bg-slate-700/30 rounded-lg p-3">
-                        <p className="text-cyan-400 font-medium">{formatFileSize(outputSize)}</p>
+                        <p className="text-cyan-400 font-medium text-xs sm:text-sm">{formatFileSize(outputSize)}</p>
                         {getCompressionRatio() && (
-                          <p className="text-green-400 font-semibold flex items-center justify-center gap-1">
+                          <p className="text-green-400 font-semibold flex items-center justify-center gap-1 text-xs sm:text-sm">
                             <Zap className="h-3 w-3" />
                             Redução: {getCompressionRatio()}%
                           </p>
@@ -341,9 +343,9 @@ export default function ImageConverter() {
                     )}
                     <Button
                       onClick={downloadImage}
-                      className="w-full bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-600 hover:to-cyan-600 text-white font-semibold py-3 rounded-lg shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02]"
+                      className="w-full bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-600 hover:to-cyan-600 text-white font-semibold py-2.5 sm:py-3 rounded-lg shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02] text-sm sm:text-base"
                     >
-                      <Download className="mr-2 h-4 w-4" />
+                      <Download className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                       Baixar Imagem
                     </Button>
                   </div>
