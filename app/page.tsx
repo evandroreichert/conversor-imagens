@@ -11,7 +11,6 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Upload, Download, ImageIcon, Loader2, Zap, Sparkles } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
-import { Alert, AlertDescription } from "@/components/ui/alert"
 import Image from "next/image"
 
 export default function ImageConverter() {
@@ -159,7 +158,7 @@ export default function ImageConverter() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden flex items-center justify-center">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -167,9 +166,9 @@ export default function ImageConverter() {
         <div className="absolute -bottom-8 left-20 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-500"></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto p-4 space-y-6">
+      <div className="relative z-10 w-full max-w-4xl mx-auto p-4 space-y-6">
         {/* Header with Seanet Logo */}
-        <div className="text-center space-y-6 py-8">
+        <div className="text-center space-y-4 py-6">
           <div className="flex justify-center mb-6">
             <Image src="/seanet-logo-dark.png" alt="Seanet" width={200} height={60} className="h-12 w-auto" />
           </div>
