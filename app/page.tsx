@@ -158,7 +158,7 @@ export default function ImageConverter() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-blue-950 to-gray-950 relative overflow-hidden flex items-center justify-center">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -175,10 +175,10 @@ export default function ImageConverter() {
           </div>
 
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent leading-tight">
+            {/* Título "Conversor de Imagens" agora é branco */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
               Conversor de Imagens
             </h1>
-            <div className="text-4xl sm:text-5xl lg:text-6xl animate-pulse delay-300">⚡</div>
           </div>
 
           <div className="flex items-center justify-center gap-2 text-blue-400">
