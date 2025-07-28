@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
 import { Upload, Download, ImageIcon, Loader2, Zap, Sparkles } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
-import Image from "next/image"
+// Removido: import Image from "next/image"
 
 export default function ImageConverter() {
   const [inputFile, setInputFile] = useState<File | null>(null)
@@ -59,7 +59,7 @@ export default function ImageConverter() {
       const ctx = canvas.getContext("2d")
       if (!ctx) throw new Error("Não foi possível obter contexto do canvas")
 
-      const img = new window.Image() // Alterado para window.Image
+      const img = new window.Image() // Mantido para garantir o uso do construtor nativo
       img.crossOrigin = "anonymous"
 
       await new Promise<void>((resolve, reject) => {
@@ -170,7 +170,8 @@ export default function ImageConverter() {
         {/* Header with Seanet Logo */}
         <div className="text-center space-y-3 sm:space-y-4 py-4 sm:py-6">
           <div className="flex justify-center mb-4 sm:mb-6">
-            <Image src="/seanet-logo-dark.png" alt="Seanet" width={200} height={60} className="h-8 sm:h-12 w-auto" />
+            {/* Alterado para tag <img> HTML padrão */}
+            <img src="/seanet-logo-dark.png" alt="Seanet" className="h-8 sm:h-12 w-auto" />
           </div>
 
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
