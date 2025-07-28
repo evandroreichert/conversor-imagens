@@ -59,7 +59,7 @@ export default function ImageConverter() {
       const ctx = canvas.getContext("2d")
       if (!ctx) throw new Error("Não foi possível obter contexto do canvas")
 
-      const img = new Image()
+      const img = new window.Image() // Alterado para window.Image
       img.crossOrigin = "anonymous"
 
       await new Promise<void>((resolve, reject) => {
