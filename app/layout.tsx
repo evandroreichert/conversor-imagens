@@ -8,8 +8,8 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "Conversor de Imagens | Seanet",
+  description: "Criado por Evandro Reichert",
   generator: "v0.dev",
 }
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <head>
         <style>{`
 html {
