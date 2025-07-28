@@ -1,30 +1,57 @@
-# Web app with ffmpeg
+# Conversor de Imagens (Next.js + v0.dev)
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+*Sincronizado automaticamente com seus deploys do [v0.dev](https://v0.dev)*
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/wmLuE0khjpU)
+[![Deploy no Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg)
+[![Feito com v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/wmLuE0khjpU)
 
-## Overview
+## Visão Geral
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+Este repositório está sincronizado com seu app publicado no [v0.dev](https://v0.dev).
+Quaisquer alterações feitas no app publicado serão automaticamente enviadas para este repositório.
 
-## Deployment
+## Deploy Online
 
-Your project is live at:
+Seu projeto está disponível em:
 
 **[https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg](https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg)**
 
-## Build your app
+## Como rodar o projeto localmente
 
-Continue building your app on:
+Siga os passos abaixo para executar o projeto em sua máquina:
 
-**[https://v0.dev/chat/projects/wmLuE0khjpU](https://v0.dev/chat/projects/wmLuE0khjpU)**
+1. **Clone o repositório:**
+   ```
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd conversor-imagens
+   ```
 
-## How It Works
+2. **Instale as dependências:**
+   ```
+   npm install
+   ```
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+3. **Execute o projeto em modo desenvolvimento:**
+   ```
+   npm run dev
+   ```
+   O app estará disponível em [http://localhost:3000](http://localhost:3000)
+
+4. **Para gerar a build de produção:**
+   ```
+   npx next build
+   ```
+
+5. **Para rodar a build de produção localmente:**
+   ```
+   npx next start
+   ```
+
+> **Obs:** Certifique-se de ter o [Node.js](https://nodejs.org/) instalado.
+
+## Como funciona
+
+1. Crie e modifique seu projeto usando o [v0.dev](https://v0.dev)
+2. Faça o deploy pelo painel do v0
+3. As alterações são automaticamente enviadas para este repositório
+4. O Vercel faz o deploy da versão mais recente deste repositório
