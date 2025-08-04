@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
-import { Upload, Download, ImageIcon, Loader2, Zap, Sparkles } from "lucide-react"
+import { Upload, Download, ImageIcon, Loader2, Zap} from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 // Removido: import Image from "next/image"
 
@@ -182,9 +182,9 @@ export default function ImageConverter() {
           </div>
 
           <div className="flex items-center justify-center gap-2 text-blue-400">
-            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
+            <Zap className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
             <span className="text-xs sm:text-sm font-medium">Powered for Seanet Telecom</span>
-            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse delay-150" />
+            <Zap className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse delay-150" />
           </div>
         </div>
 
