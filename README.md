@@ -1,30 +1,34 @@
-# Web app with ffmpeg
+# Conversor de Imagens & Gerador WhatsApp
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+## Sobre o Projeto
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/wmLuE0khjpU)
+Uma aplicação web moderna que combina duas ferramentas essenciais:
 
-## Overview
+1. **Conversor de Imagens** - Converte imagens entre diferentes formatos (JPEG, PNG, WebP) com processamento client-side usando Canvas HTML.
+2. **Gerador de Links WhatsApp** - Cria links wa.me personalizados com QR codes.
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## Funcionalidades
 
-## Deployment
+### Conversor de Imagens
+- Conversão entre formatos JPEG, PNG e WebP
+- Processamento totalmente no navegador (sem upload para servidor)
+- Interface drag-and-drop intuitiva
+- Preview em tempo real
+- Download automático da imagem convertida
+- Suporte a múltiplos formatos de entrada
 
-Your project is live at:
+### Gerador WhatsApp
+- Formatação automática de números brasileiros
+- Geração de links wa.me personalizados
+- Criação de QR codes escaneáveis
+- Mensagem pré-definida opcional
+- Funcionalidades de copiar link e download do QR code
+- Abertura direta no WhatsApp
 
-**[https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg](https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg)**
+## Tecnologias Utilizadas
 
-## Build your app
-
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/wmLuE0khjpU](https://v0.dev/chat/projects/wmLuE0khjpU)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- **Next.js 14** - Framework React com App Router
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Estilização utilitária
+- **Shadcn/ui** - Componentes de interface
+- **QR Server API** - Geração de QR codes
