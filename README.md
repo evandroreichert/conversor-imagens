@@ -1,9 +1,30 @@
-# Conversor de Imagens (Next.js + HTML Canvas)
+# Web app with ffmpeg
 
-Um app web simples feito com Next.js que permite a conversão de imagens diretamente no navegador utilizando o elemento HTML Canvas.
+*Automatically synced with your [v0.dev](https://v0.dev) deployments*
 
-## Como funciona
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg)
+[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/wmLuE0khjpU)
 
-Este projeto permite que o usuário envie uma imagem e a converta para diferentes formatos (como PNG, JPEG, WEBP) diretamente no navegador. A conversão é feita utilizando o elemento `<canvas>` do HTML5, sem necessidade de upload para servidores externos.
+## Overview
 
-### Teste em: *https://conversor-seanet.vercel.app/*
+This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
+Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+
+## Deployment
+
+Your project is live at:
+
+**[https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg](https://vercel.com/evandroreicherts-projects/v0-web-app-with-ffmpeg)**
+
+## Build your app
+
+Continue building your app on:
+
+**[https://v0.dev/chat/projects/wmLuE0khjpU](https://v0.dev/chat/projects/wmLuE0khjpU)**
+
+## How It Works
+
+1. Create and modify your project using [v0.dev](https://v0.dev)
+2. Deploy your chats from the v0 interface
+3. Changes are automatically pushed to this repository
+4. Vercel deploys the latest version from this repository

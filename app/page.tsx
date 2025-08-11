@@ -9,8 +9,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
-import { Upload, Download, ImageIcon, Loader2, Zap} from "lucide-react"
+import { Upload, Download, ImageIcon, Loader2, Zap, Sparkles, MessageCircle } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import Link from "next/link"
 
 export default function ImageConverter() {
   const [inputFile, setInputFile] = useState<File | null>(null)
@@ -58,7 +59,7 @@ export default function ImageConverter() {
       const ctx = canvas.getContext("2d")
       if (!ctx) throw new Error("Não foi possível obter contexto do canvas")
 
-      const img = new window.Image() 
+      const img = new window.Image() // Mantido para garantir o uso do construtor nativo
       img.crossOrigin = "anonymous"
 
       await new Promise<void>((resolve, reject) => {
@@ -158,6 +159,7 @@ export default function ImageConverter() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-blue-950 to-gray-950 relative overflow-hidden flex items-center justify-center">
+      {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
         <div className="absolute top-40 right-10 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
@@ -165,6 +167,25 @@ export default function ImageConverter() {
       </div>
 
       <div className="relative z-10 w-full max-w-4xl mx-auto p-3 sm:p-4 space-y-4 sm:space-y-6">
+        <div className="flex justify-center mb-4">
+          <div className="flex bg-slate-800/50 backdrop-blur-sm rounded-lg p-1 border border-slate-700/50">
+            <Button
+              variant="ghost"
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600"
+            >
+              <ImageIcon className="h-4 w-4 mr-2" />
+              Conversor
+            </Button>
+            <Link href="/whatsapp">
+              <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-slate-700/50">
+                <MessageCircle className="h-4 w-4 mr-2" />
+                WhatsApp
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Header with Seanet Logo */}
         <div className="text-center space-y-3 sm:space-y-4 py-4 sm:py-6">
           <div className="flex justify-center mb-4 sm:mb-6">
             <img src="/seanet-logo-dark.png" alt="Seanet" className="h-8 sm:h-12 w-auto" />
@@ -177,8 +198,9 @@ export default function ImageConverter() {
           </div>
 
           <div className="flex items-center justify-center gap-2 text-blue-400">
+            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
             <span className="text-xs sm:text-sm font-medium">Powered for Seanet Telecom</span>
-            <Zap className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse delay-150" />
+            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse delay-150" />
           </div>
         </div>
 
