@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
-import { Upload, Download, ImageIcon, Loader2, Zap, Sparkles, MessageCircle } from "lucide-react"
+import { Upload, Download, ImageIcon, Loader2, Zap, MessageCircle } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import Link from "next/link"
 
@@ -59,7 +59,7 @@ export default function ImageConverter() {
       const ctx = canvas.getContext("2d")
       if (!ctx) throw new Error("Não foi possível obter contexto do canvas")
 
-      const img = new window.Image() // Mantido para garantir o uso do construtor nativo
+      const img = new window.Image() 
       img.crossOrigin = "anonymous"
 
       await new Promise<void>((resolve, reject) => {
@@ -185,7 +185,6 @@ export default function ImageConverter() {
           </div>
         </div>
 
-        {/* Header with Seanet Logo */}
         <div className="text-center space-y-3 sm:space-y-4 py-4 sm:py-6">
           <div className="flex justify-center mb-4 sm:mb-6">
             <img src="/seanet-logo-dark.png" alt="Seanet" className="h-8 sm:h-12 w-auto" />
@@ -198,9 +197,8 @@ export default function ImageConverter() {
           </div>
 
           <div className="flex items-center justify-center gap-2 text-blue-400">
-            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
             <span className="text-xs sm:text-sm font-medium">Powered for Seanet Telecom</span>
-            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse delay-150" />
+            <Zap className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
           </div>
         </div>
 

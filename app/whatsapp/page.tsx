@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { MessageCircle, QrCode, Copy, Download, ImageIcon, Sparkles, LinkIcon } from "lucide-react"
+import { MessageCircle, QrCode, Copy, Download, ImageIcon, Zap, LinkIcon } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import Link from "next/link"
 
@@ -71,7 +71,7 @@ export default function WhatsAppGenerator() {
       ctx.fillStyle = "#ffffff"
       ctx.fillRect(0, 0, size, size)
 
-      const modules = 25 // Número de módulos do QR code
+      const modules = 25 
       const moduleSize = size / modules
 
       ctx.fillStyle = "#000000"
@@ -98,10 +98,8 @@ export default function WhatsAppGenerator() {
         return ((hash << 5) - hash + char.charCodeAt(0)) & 0xffffffff
       }, 0)
 
-      // Preencher área de dados
       for (let row = 0; row < modules; row++) {
         for (let col = 0; col < modules; col++) {
-          // Evitar áreas dos padrões de posicionamento
           if (
             (row < 9 && col < 9) || // Superior esquerdo
             (row < 9 && col > 15) || // Superior direito
@@ -159,7 +157,6 @@ export default function WhatsAppGenerator() {
   }
 
   const formatPhoneNumber = (value: string) => {
-    // Remove tudo que não é número
     const numbers = value.replace(/\D/g, "")
 
     // Aplica máscara brasileira baseada no comprimento
@@ -222,9 +219,8 @@ export default function WhatsAppGenerator() {
           </div>
 
           <div className="flex items-center justify-center gap-2 text-green-400">
-            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
             <span className="text-xs sm:text-sm font-medium">Links e QR Codes Instantâneos</span>
-            <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse delay-150" />
+            <Zap className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse delay-150" />
           </div>
         </div>
 
